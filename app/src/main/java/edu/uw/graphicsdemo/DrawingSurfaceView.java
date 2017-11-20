@@ -79,17 +79,11 @@ public class DrawingSurfaceView extends SurfaceView implements SurfaceHolder.Cal
     public void update(){
         //update the "game state" here (move things around, etc.
 
-        ball.cx += ball.dx; //move
+        //move the ball
+        ball.cx += ball.dx;
         ball.cy += ball.dy;
 
-        //slow down
-        ball.dx *= 0.99;
-        ball.dy *= 0.99;
-
-//        if(ball.dx < .1) ball.dx = 0;
-//        if(ball.dy < .1) ball.dy = 0;
-
-        /* hit detection */
+        //collision check
         if(ball.cx + ball.radius > viewWidth) { //left bound
             ball.cx = viewWidth - ball.radius;
             ball.dx *= -1;

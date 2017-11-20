@@ -87,7 +87,7 @@ public class DrawingView extends View {
         canvas.drawColor(Color.rgb(51,10,111)); //purple out the background
 
         //move the ball
-        ball.cx += ball.dx;
+        ball.cx += 3;
         ball.cy += ball.dy;
 
         //collision check
@@ -110,6 +110,7 @@ public class DrawingView extends View {
 
         canvas.drawCircle(ball.cx, ball.cy, ball.radius, whitePaint); //we can draw directly onto the canvas
 
+
         for(int x=50; x<viewWidth-50; x++) { //most of the width
             for(int y=100; y<110; y++) { //10 pixels high
                 bmp.setPixel(x, y, Color.YELLOW); //we can also set individual pixels in a Bitmap (like a BufferedImage)
@@ -117,5 +118,6 @@ public class DrawingView extends View {
         }
         canvas.drawBitmap(bmp, 0, 0, null); //and then draw the BitMap onto the canvas.
         //Canvas bmc = new Canvas(bmp); //we can also make a canvas out of a Bitmap to draw on that (like fetching g2d from a BufferedImage) if we don't want to double-buffer
+
     }
 }
